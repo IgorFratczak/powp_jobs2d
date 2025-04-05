@@ -7,13 +7,15 @@ public class SetPositionCommand implements DriverCommand{
     private final Job2dDriver driver;
 
     public SetPositionCommand(int x, int y, Job2dDriver driver) {
+        this.driver = driver;
         this.x = x;
         this.y = y;
-        this.driver = driver;
+
     }
 
     @Override
     public void execute(){
+        System.out.println("set " + x + " " + y);
         driver.setPosition(x,y);
     }
 }
